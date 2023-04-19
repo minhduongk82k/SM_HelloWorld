@@ -12,6 +12,12 @@
         <option value="$PROJECT_DIR$/src/dev/tests/integration/testsuite/Magento/Framework/Composer/_files/testFromCreateProject/tests" />
         <option value="$PROJECT_DIR$/src/dev/tests/integration/testsuite/Magento/Framework/Composer/_files/testFromClone/tests" />
         <option value="$PROJECT_DIR$/src/tests" />
+        <option value="$PROJECT_DIR$/src/dev/tests/integration/testsuite/Magento/Framework/Composer/_files/testFromCreateProject/tests" />
+        <option value="$PROJECT_DIR$/src/dev/tests/integration/testsuite/Magento/Framework/Composer/_files/testFromClone/tests" />
+        <option value="$PROJECT_DIR$/src/tests" />
+        <option value="$PROJECT_DIR$/src/dev/tests/integration/testsuite/Magento/Framework/Composer/_files/testFromCreateProject/tests" />
+        <option value="$PROJECT_DIR$/src/dev/tests/integration/testsuite/Magento/Framework/Composer/_files/testFromClone/tests" />
+        <option value="$PROJECT_DIR$/src/tests" />
       </list>
     </option>
   </component>
