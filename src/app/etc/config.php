@@ -330,6 +330,7 @@ return [
         'PayPal_Braintree' => 1,
         'PayPal_BraintreeGraphQl' => 1,
         'SM_HelloWorld' => 1,
+        'SM_ShopByBrand' => 1,
         'Temando_ShippingRemover' => 1
     ]
 ];

@@ -1,0 +1,28 @@
+<?php
+/** @var \SM\ShopByBrand\Block\Frontend\Brand\Index $block */
+if ($valueConfig = 1) :
+    $brands = $block->showBrandCollection();
+endif;
+?>
+<h2>Listing Brands</h2>
+<a href="<?php echo $block->getURL('brand/brand/index'); ?>"></a>
+<ul class="list-brand">
+    <?php if (!$brands == false) : ?>
+        <?php foreach ($brands as $key => $value) : ?>
+            <?php
+            $urlById = $block->getURL('brand/brand/detail') . "id/" . $value['brand_id'];
+            $name = $value['name'];
+            $image = $value['image'];
+            ?>
+            <li class="brand-item"><a href="<?php echo $urlById; ?>">
+                    <div class="">
+                        <div class="image">
+                            <img src="<?php echo $image; ?>" alt="">
+                        </div>
+                        <p class="name"><?php echo $name; ?></p>
+                    </div>
+                </a>
+            </li>
+        <?php endforeach; ?>
+    <?php endif; ?>
+</ul>

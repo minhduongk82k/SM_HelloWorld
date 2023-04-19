@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="page.main.title">
+            <block class="SM\ShopByBrand\Block\Frontend\Brand\BrandInProduct" name="show_Detail_Brand" cacheable="false" template="SM_ShopByBrand::brand/show_product_page.phtml" after="-" />
+        </referenceBlock>
+    </body>
+</page>

@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="SM_ShopByBrand::brand" title="Brands" module="SM_ShopByBrand" sortOrder="10" action="brand/brand/index" resource="SM_ShopByBrand::brand"/>
+    </menu>
+</config>
