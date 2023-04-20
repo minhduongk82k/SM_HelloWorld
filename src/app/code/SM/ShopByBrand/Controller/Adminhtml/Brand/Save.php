@@ -13,16 +13,25 @@ class Save extends \Magento\Backend\App\Action
 {
 
     protected $dataPersistor;
+    /**
+     * @var \SM\ShopByBrand\Model\Brand\ImageUploader
+     */
+    public $imageUploader;
+
 
     /**
      * @param \Magento\Backend\App\Action\Context $context
+     * @param \SM\ShopByBrand\Model\Brand\ImageUploader $imageUploader
+
      * @param \Magento\Framework\App\Request\DataPersistorInterface $dataPersistor
      */
     public function __construct(
         \Magento\Backend\App\Action\Context $context,
+        \SM\ShopByBrand\Model\Brand\ImageUploader $imageUploader,
         \Magento\Framework\App\Request\DataPersistorInterface $dataPersistor
     ) {
         $this->dataPersistor = $dataPersistor;
+        $this->imageUploader = $imageUploader;
         parent::__construct($context);
     }
 
@@ -37,6 +46,17 @@ class Save extends \Magento\Backend\App\Action
         $resultRedirect = $this->resultRedirectFactory->create();
         $data = $this->getRequest()->getPostValue();
         if ($data) {
+            if (isset($data['image']) && is_array($data['image'])) {
+                if (!empty($data['image']['delete'])) {
+                    $data['image'] = null;
+                } else {
+                    if (isset($data['image'][0]['name']) && isset($data['image'][0]['tmp_name'])) {
+                        $data['image'] = $data['image'][0]['name'];
+                    } else {
+                        unset($data['image']);
+                    }
+                }
+            }
             $id = $this->getRequest()->getParam('brand_id');
 
             $model = $this->_objectManager->create(\SM\ShopByBrand\Model\Brand::class)->load($id);
@@ -45,6 +65,8 @@ class Save extends \Magento\Backend\App\Action
                 return $resultRedirect->setPath('*/*/');
             }
 
+
+//            $data = $this->imageUploader->saveFileToTmpDir('image');
             $model->setData($data);
 
             try {
